@@ -12,12 +12,12 @@
             margin: 0;
             background-color: #121212;
             color: #ffffff;
-            background-repeat: repeat; /* Make the image repeat */
-            background-size: 34px 32px; /* Set the size of each repeating image */
-            margin-bottom: 60px; /* Add bottom margin for footer visibility */
+            background-repeat: repeat;
+            background-size: 34px 32px;
+            margin-bottom: 60px;
         }
         .container {
-            max-width: 90%;  /* Use percentage to allow it to scale with screen size */
+            max-width: 90%;
             width: 800px;
             margin: 40px auto;
             padding: 20px;
@@ -36,7 +36,7 @@
             height: auto;
             z-index: 1;
         }
-
+		
         h2 {
             font-size: 32px;
             color: #ffffff;
@@ -118,7 +118,7 @@
             }
 
             .mod-logo {
-                width: 160px;  /* Adjust logo size for smaller screens */
+                width: 160px;
                 top: 10px;
                 left: 10px;
             }
@@ -140,11 +140,9 @@
                 font-size: 12px;
             }
         }
-
-        /* Media Queries for very small screens */
         @media (max-width: 480px) {
             .version {
-                flex-direction: column;  /* Stack version info vertically on small screens */
+                flex-direction: column;
                 text-align: center;
             }
 
@@ -157,7 +155,12 @@
                 margin-top: 10px;
             }
         }
-
+		a.custom-link {
+			color: #feaa00;
+		}
+		a.custom-link:hover {
+			color: #00FF00;
+		}
     </style>
 </head>
 <body>
@@ -168,10 +171,10 @@
 
         </div>
         <div class="contact">
-            If you have unavailable or missing versions in list of the mod, contact me on Discord: @_skylandyt
+			<p>If you have unavailable or missing versions in the list of the mod, contact me on Discord: @_skylandyt (<a href="https://discord.com/users/1150021022033137705" target="_blank" class="custom-link">Chat link</a>).</p>
         </div>
         <div class="footer">
-            <p>Made with ❤️ by <a href="#">SkylandYT2</a></p>
+			<p>Made with ❤️ by <a href="https://github.com/SkyLandYT2/" target="_blank">SkylandYT2</a></p>
         </div>
     </div>
     <img class="mod-logo" src="./icons/modlogo.png" alt="Mod Logo">
@@ -189,9 +192,8 @@
 			setTimeout(() => {
 				document.getElementById('loader').style.display = 'none';
 			}, 1500);
-		}
+		} 
 	</script>
-	
     <script>
         const versions = [
             { version: "The Br0k3n Script v0.71", size: "12.5MB", changes: "", link: "https://drive.google.com/uc?id=1YiU1e-Rm8_yXBaPe5YGvOFxIFKrfBqMW&export=download", available: true },
@@ -203,8 +205,8 @@
             { version: "thebrokenscript-1.3.5-forge-1.20.1", size: "34.8MB", changes: "", link: "https://drive.google.com/uc?id=1TizNW6PP0M4c-Nhl95MMgnv3gISLRE60&export=download", available: true },
             { version: "thebrokenscript-1.4-forge-1.20.1", size: "34.6MB", changes: "", link: "https://drive.google.com/uc?id=178IEmJaQG6pD-H981ABZLFfUV-HhShJs&export=download", available: true },
             { version: "thebrokenscript-1.5-forge-1.20.1", size: "38.5MB", changes: "", link: "https://drive.google.com/uc?id=1P1cg62595pilHzYetBzVxt6YSr5fv-GM&export=download", available: true },
-            { version: "thebrokenscript-1.6-forge-1.20.1", size: "Idk", changes: "", link: "#", available: false },
-            { version: "thebrokenscript-1.6.1-forge-1.20.1", size: "Idk", changes: "", link: "#", available: false },
+            { version: "thebrokenscript-1.6-forge-1.20.1", size: "39.7MB", changes: "", link: "https://drive.google.com/uc?id=1eaemxkcQuDMS_IuIhDcsIWvyWz_Lqkcg&export=download", available: true, note: "Thanks <strong>strutttr</strong> for sending this version" },
+            { version: "thebrokenscript-1.6.1-forge-1.20.1", size: "39.7MB", changes: "", link: "	https://drive.google.com/uc?id=1ETLb6ftXBsN8XEmvMMM8LSqLd1dDxPjc&export=download", available: true, note: "Thanks <strong>strutttr</strong> for sending this version" },
             { version: "thebrokenscript-1.6.2-forge-1.20.1", size: "39.7MB", changes: "", link: "https://drive.google.com/uc?id=1-1QNNVBtnNxfEiRWbUw5JXHI1aHX5vHw&export=download", available: true },
             { version: "thebrokenscript-1.7-forge-1.20.1", size: "41MB", changes: "", link: "https://drive.google.com/uc?id=1GKab8Buh0dJMGChZ_A8UPW-pipKUD0Aq&export=download", available: true },
             { version: "thebrokenscript-1.7.1-forge-1.20.1", size: "41MB", changes: "", link: "https://drive.google.com/uc?id=1LNHU-tPgV7j_ZLKuBDMZFnVnH4cw4uNJ&export=download", available: true },
@@ -238,6 +240,7 @@
                         <strong>${mod.version}</strong><br>
                         Size: ${mod.size} <br>
                         Changes: placeholder
+                        ${mod.note ? `<br><span style='color: #ffcc00;'>${mod.note}</span>` : ""}
                     </div>
                     <button class="download ${mod.available ? 'available' : 'unavailable'}" 
                         ${mod.available ? `onclick="startDownload('${mod.link}', this)"` : "disabled"}>${mod.available ? 'Download' : 'Unavailable'}</button>
@@ -245,6 +248,7 @@
                 list.appendChild(div);
             });
         }
+
 
         function startDownload(link, button) {
             window.location.href = link;
