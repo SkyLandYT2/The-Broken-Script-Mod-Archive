@@ -109,7 +109,6 @@
             100% { transform: rotate(360deg); }
         }
 
-        /* Media Queries for smaller screens */
         @media (max-width: 768px) {
             .container {
                 max-width: 100%;
@@ -161,6 +160,42 @@
 		a.custom-link:hover {
 			color: #00FF00;
 		}
+		
+		.modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+			z-index: 1414
+        }
+        .modal-content {
+            background-color: #2c2c2c;
+            padding: 20px;
+            border-radius: 10px;
+            color: white;
+            text-align: center;
+        }
+        .modal button {
+            padding: 10px 20px;
+            font-size: 14px;
+            margin: 10px;
+            background-color: #28a745;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .modal button.cancel {
+            background-color: #d9534f;
+        }
+        .modal button:hover {
+            background-color: #218838;
+        }
     </style>
 </head>
 <body>
@@ -181,6 +216,14 @@
 	<div id="loader" style="display: none;">
     <div class="spinner"></div>
 	</div>
+    <div id="warningModal" class="modal">
+        <div class="modal-content">
+            <h3>Warning</h3>
+            <p>This version may cause your PC to shut down. Are you sure you want to download it?</p>
+            <button id="cancelBtn" class="cancel">Cancel</button>
+            <button id="downloadBtn">Download</button>
+        </div>
+    </div>
 
 	<script>
 		window.onload = () => {
@@ -213,9 +256,9 @@
             { version: "thebrokenscript-1.7.2-forge-1.20.1", size: "40.9MB", changes: "", link: "https://drive.google.com/uc?id=1wqzSGL5vVqDk8-41TMltQqvJLQsQWRAr&export=download", available: true },
             { version: "thebrokenscript-1.7.3-forge-1.20.1", size: "41MB", changes: "", link: "https://drive.google.com/uc?id=1Sb5OADQc1B2BSNN8Jr8jIXH7ncQxDElB&export=download", available: true },
             { version: "thebrokenscript-1.8-forge-1.20.1", size: "52.3MB", changes: "", link: "https://drive.google.com/uc?id=1R4MGj0HQglVKWYALBtfRxpK94b02lvXa&export=download", available: true },
-            { version: "thebrokenscript-1.9-forge-1.20.1_even_safer", size: "86MB", changes: "", link: "https://drive.google.com/uc?id=1V7HoeN86An9XhhssKywsq1OI71LYzHb7&export=download", available: true },
-            { version: "thebrokenscript-1.9-forge-1.20.1 / safe", size: "idk", changes: "", link: "#", available: false },
-            { version: "thebrokenscript-1.9-forge-1.20.1 / not safe", size: "idk", changes: "", link: "#", available: false }
+            { version: "thebrokenscript-1.9-forge-1.20.1", size: "idk", changes: "", warning: true, link: "https://drive.google.com/uc?id=1Nnb5XCBYox_InNRNpWHmVJE3bKoHyGQv&export=download", available: true, note: "Thanks <strong>saaransh_xds</strong> for finding this version"},
+	    { version: "thebrokenscript-1.9-forge-1.20.1 / safe", size: "idk", changes: "", link: "#", available: false },
+	    { version: "thebrokenscript-1.9-forge-1.20.1_even_safer", size: "86MB", changes: "", link: "https://drive.google.com/uc?id=1V7HoeN86An9XhhssKywsq1OI71LYzHb7&export=download", available: true }
         ];
 		
         const backgrounds = [
@@ -231,6 +274,11 @@
         document.body.style.backgroundImage = `url('${randomBackground}')`;
 
         function loadVersions() {
+            document.getElementById('loader').style.display = 'block';
+            setTimeout(() => {
+                document.getElementById('loader').style.display = 'none';
+            }, 1500);
+            
             const list = document.getElementById('versionsList');
             versions.forEach(mod => {
                 const div = document.createElement('div');
@@ -243,12 +291,36 @@
                         ${mod.note ? `<br><span style='color: #ffcc00;'>${mod.note}</span>` : ""}
                     </div>
                     <button class="download ${mod.available ? 'available' : 'unavailable'}" 
-                        ${mod.available ? `onclick="startDownload('${mod.link}', this)"` : "disabled"}>${mod.available ? 'Download' : 'Unavailable'}</button>
+                        ${mod.available ? `onclick="checkWarning('${mod.link}', this, '${mod.version}')" ` : "disabled"}>${mod.available ? 'Download' : 'Unavailable'}</button>
                 `;
                 list.appendChild(div);
             });
         }
 
+
+
+        function checkWarning(link, button, version) {
+            const mod = versions.find(m => m.version === version);
+            if (mod.warning) {
+                showModal(link, button);
+            } else {
+                startDownload(link, button);
+            }
+        }
+
+        function showModal(link, button) {
+            const modal = document.getElementById('warningModal');
+            modal.style.display = 'flex';
+
+            document.getElementById('cancelBtn').onclick = () => {
+                modal.style.display = 'none';
+            };
+            
+            document.getElementById('downloadBtn').onclick = () => {
+                startDownload(link, button);
+                modal.style.display = 'none';
+            };
+        }
 
         function startDownload(link, button) {
             window.location.href = link;
