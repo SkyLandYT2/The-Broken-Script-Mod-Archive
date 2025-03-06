@@ -187,6 +187,52 @@
             .footer {
                 font-size: 12px;
             }
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            nav ul {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            nav ul li {
+                margin-left: 0;
+                margin-bottom: 10px;
+            }
+
+            .version {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .version div {
+                margin-bottom: 10px;
+            }
+
+            .version button {
+                width: 100%;
+                margin-top: 10px;
+            }
+
+            .container {
+                max-width: 100%;
+                margin: 20px;
+                padding: 15px;
+            }
+
+            h2 {
+                font-size: 24px;
+            }
+
+            .contact {
+                font-size: 14px;
+            }
+
+            .footer {
+                font-size: 12px;
+            }
         }
         @media (max-width: 480px) {
             .version {
@@ -223,29 +269,6 @@
             align-items: center;
 			z-index: 1414
         }
-        .modal-content {
-            background-color: #2c2c2c;
-            padding: 20px;
-            border-radius: 10px;
-            color: white;
-            text-align: center;
-        }
-        .modal button {
-            padding: 10px 20px;
-            font-size: 14px;
-            margin: 10px;
-            background-color: #28a745;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        .modal button.cancel {
-            background-color: #d9534f;
-        }
-        .modal button:hover {
-            background-color: #218838;
-        }
-		
 		/* Добавим стили для блока с изменениями */
 		.version .changes {
 			display: none; /* Скрыть блок по умолчанию */
@@ -271,8 +294,20 @@
 			background-color: #138808;
 		}
 
+		.version .download {
+			display: block; /* Отображать кнопку по умолчанию */
+		}
+
+		.version .download.hidden {
+			display: none; /* Скрыть кнопку */
+		}
+
+		.version .changes-label {
+			display: none; /* Скрыть текст "Changes:" по умолчанию */
+		}
+
 		/* Изменения для адаптивности */
-		@media (max-width: 768px) {
+		@media (max-width: 1068px) {
 			.version .toggle-btn {
 				padding: 6px 12px;
 			}
@@ -356,7 +391,7 @@
 				{ version: "thebrokenscript-1.1-[fixed]-1.20.1", size: "28.8MB", changes: "placeholder", link: "https://drive.google.com/uc?id=1ZB04Q0x-o_0Yj6K8CpJDmhnMDNSdJmp8&export=download", available: true },
 				{ version: "The_broken_script_v1.0(fix)", size: "26.8MB", changes: "placeholder", link: "https://drive.google.com/uc?id=1nenk1yOx3_rioB2pgbh0J4WBOLdzU5LA&export=download", available: true },
 				{ version: "The broken script 0.9", size: "24.8MB", changes: "placeholder", link: "https://drive.google.com/uc?id=19DRSURolZ6SIEqMxjFbYdXhGeaXbeuBf&export=download", available: true },
-				{ version: "TheBrokenScript0.8forge1.20.1", size: "24.6MB", changes: "placeholder", link: "https://drive.google.com/uc?id=1JW9w0KRo6rs4uabM7V_Wb10jPocbGSVc&export=download", available: true },
+				{ version: "TheBrokenScript0.8forge1.20.1", size: "24.6MB", changes: "release", link: "https://drive.google.com/uc?id=1JW9w0KRo6rs4uabM7V_Wb10jPocbGSVc&export=download", available: true },
 				{ version: "The Br0k3n Script v0.71", size: "12.5MB", changes: "beta test", link: "https://drive.google.com/uc?id=1YiU1e-Rm8_yXBaPe5YGvOFxIFKrfBqMW&export=download", available: true }
 			];
 		
@@ -376,16 +411,22 @@
 		function toggleChanges(button) {
 		const changes = button.closest('.version').querySelector('.changes');
 		const note = button.closest('.version').querySelector('.note');
+		const downloadButton = button.closest('.version').querySelector('.download');
+		const changesLabel = button.closest('.version').querySelector('.changes-label');
 		
 		// Убедитесь, что начальное состояние изменений скрыто
 		if (changes.style.display === "" || changes.style.display === "none") {
 			changes.style.display = "block";
+			changesLabel.style.display = "inline"; // Показать текст "Changes:"
 			button.textContent = "Hide Changes";
 			if (note) note.style.display = "none";
+			downloadButton.classList.add('hidden'); // Скрыть кнопку загрузки
 		} else {
 			changes.style.display = "none";
+			changesLabel.style.display = "none"; // Скрыть текст "Changes:"
 			button.textContent = "Show Changes";
 			if (note) note.style.display = "block";
+			downloadButton.classList.remove('hidden'); // Показать кнопку загрузки
 		}
 	}
 
@@ -406,7 +447,7 @@
 					<div>
 						<strong>${mod.version}</strong><br>
 						Size: ${mod.size} <br>
-						Changes: <button class="toggle-btn" onclick="toggleChanges(this)">Show Changes</button>
+						<span class="changes-label">Changes:</span> <button class="toggle-btn" onclick="toggleChanges(this)">Show Changes</button>
 					</div>
 					<div class="changes">${mod.changes}</div>
 					${mod.note ? `<br><span class="note" style='color: #ffcc00;'>${mod.note}</span>` : ""}
