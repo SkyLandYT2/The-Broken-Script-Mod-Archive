@@ -26,12 +26,48 @@
             width: auto;
         }
         
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+			z-index: 1414
+        }
+        .modal-content {
+            background-color: #2c2c2c;
+            padding: 20px;
+            border-radius: 10px;
+            color: white;
+            text-align: center;
+        }
+        .modal button {
+            padding: 10px 20px;
+            font-size: 14px;
+            margin: 10px;
+            background-color: #28a745;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .modal button.cancel {
+            background-color: #d9534f;
+        }
+        .modal button:hover {
+            background-color: #218838;
+        }
+        
         nav ul {
             list-style: none;
             padding: 0;
             margin: 0;
             display: flex;
-            width: 50%; /* Меню займет всю ширину */
+            width: 50%;
         }
         
         nav ul li {
@@ -55,8 +91,6 @@
             max-height: 64px;
             width: 64px;
         }
-
-        /* Ваши оригинальные стили */
         body {
             font-family: 'Arial', sans-serif;
             text-align: center;
@@ -102,7 +136,7 @@
         .version div {
             text-align: left;
             flex: 1;
-            word-wrap: break-word; /* Добавлено для переноса длинного текста */
+            word-wrap: break-word;
         }
 		.version button {
 			padding: 10px 20px;
@@ -113,13 +147,13 @@
 			border-radius: 5px;
 			cursor: pointer;
 			transition: background-color 0.3s ease, box-shadow 0.3s ease;
-			box-shadow: 0 0 10px rgba(40, 167, 69, 0.5); /* Легкий glow эффект */
-			display: block; /* Добавлено для переноса кнопок на следующую строку */
-			margin-top: 10px; /* Добавлено для отступа между кнопками и текстом */
+			box-shadow: 0 0 10px rgba(40, 167, 69, 0.5);
+			display: block;
+			margin-top: 10px;
 		}
 		.version button:hover {
 			background-color: #218838;
-			box-shadow: 0 0 20px rgba(40, 167, 69, 1); /* Более сильный glow эффект при наведении */
+			box-shadow: 0 0 20px rgba(40, 167, 69, 1);
 		}
 		.version button:disabled {
 			cursor: not-allowed;
@@ -129,7 +163,7 @@
 			border-radius: 5px;
 			cursor: pointer;
 			transition: background-color 0.3s ease, box-shadow 0.3s ease;
-			box-shadow: 0 0 10px rgba(217, 83, 79, 0.5); /* Легкий glow эффект */
+			box-shadow: 0 0 10px rgba(217, 83, 79, 0.5);
 		}
 
         .contact {
@@ -190,12 +224,12 @@
             header {
                 flex-direction: column;
                 align-items: flex-start;
-                width: 100%; /* Добавлено для ширины на мобильных устройствах */
+                width: 100%;
             }
 
             nav ul {
                 flex-direction: column;
-                width: 100%; /* Добавлено для ширины на мобильных устройствах */
+                width: 100%;
             }
 
             nav ul li {
@@ -250,11 +284,11 @@
                 margin-top: 10px;
             }
             header {
-                width: 100%; /* Добавлено для ширины на мобильных устройствах */
+                width: 100%;
             }
 
             nav ul {
-                width: 100%; /* Добавлено для ширины на мобильных устройствах */
+                width: 100%;
             }
         }
 		a.custom-link {
@@ -277,15 +311,15 @@
             align-items: center;
 			z-index: 1414
         }
-		/* Добавим стили для блока с изменениями */
+
 		.version .changes {
-			display: none; /* Скрыть блок по умолчанию */
+			display: none;
 			background-color: #333;
 			color: #fff;
 			padding: 10px;
 			margin-top: 10px;
 			border-radius: 5px;
-			word-wrap: break-word; /* Добавлено для переноса длинного текста */
+			word-wrap: break-word;
 		}
 
 		.version .toggle-btn {
@@ -303,18 +337,17 @@
 		}
 
 		.version .download {
-			display: block; /* Отображать кнопку по умолчанию */
+			display: block;
 		}
 
 		.version .download.hidden {
-			display: none; /* Скрыть кнопку */
+			display: none;
 		}
 
 		.version .changes-label {
-			display: none; /* Скрыть текст "Changes:" по умолчанию */
+			display: none;
 		}
 
-		/* Изменения для адаптивности */
 		@media (max-width: 1068px) {
 			.version .toggle-btn {
 				padding: 6px 12px;
@@ -422,19 +455,18 @@
 		const downloadButton = button.closest('.version').querySelector('.download');
 		const changesLabel = button.closest('.version').querySelector('.changes-label');
 		
-		// Убедитесь, что начальное состояние изменений скрыто
 		if (changes.style.display === "" || changes.style.display === "none") {
 			changes.style.display = "block";
-			changesLabel.style.display = "inline"; // Показать текст "Changes:"
+			changesLabel.style.display = "inline";
 			button.textContent = "Hide Changes";
 			if (note) note.style.display = "none";
-			downloadButton.classList.add('hidden'); // Скрыть кнопку загрузки
+			downloadButton.classList.add('hidden');
 		} else {
 			changes.style.display = "none";
-			changesLabel.style.display = "none"; // Скрыть текст "Changes:"
+			changesLabel.style.display = "none";
 			button.textContent = "Show Changes";
 			if (note) note.style.display = "block";
-			downloadButton.classList.remove('hidden'); // Показать кнопку загрузки
+			downloadButton.classList.remove('hidden');
 		}
 	}
 
