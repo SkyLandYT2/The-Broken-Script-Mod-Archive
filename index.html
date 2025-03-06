@@ -3,8 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
     <title>The Broken Script Archive</title>
     <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Open Sans', sans-serif;
+            color: #333;
+        }
+        
+        header {
+            background: #111;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+        }
+        
+        nav {
+            width: auto;
+        }
+        
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            width: 50%; /* Меню займет всю ширину */
+        }
+        
+        nav ul li {
+            margin-left: 10px;
+        }
+        
+        nav ul li a {
+            font-size: 1em;
+            color: #fff;
+            text-decoration: none;
+            display: block;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: #ff9800;
+        }
+        
+        .logo img {
+            height: auto;
+            max-height: 64px;
+            width: 64px;
+        }
+
+        /* Ваши оригинальные стили */
         body {
             font-family: 'Arial', sans-serif;
             text-align: center;
@@ -26,15 +78,6 @@
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
             position: relative;
             z-index: 2;
-        }
-
-        .mod-logo {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            width: 240px;
-            height: auto;
-            z-index: 1;
         }
 		
         h2 {
@@ -59,24 +102,36 @@
         .version div {
             text-align: left;
             flex: 1;
+            word-wrap: break-word; /* Добавлено для переноса длинного текста */
         }
-        .version button {
-            padding: 10px 20px;
-            font-size: 14px;
-            color: white;
-            background-color: #28a745;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-        .version button:hover {
-            background-color: #218838;
-        }
-        .version button:disabled {
-            background-color: #d9534f;
-            cursor: not-allowed;
-        }
+		.version button {
+			padding: 10px 20px;
+			font-size: 14px;
+			color: white;
+			background-color: #28a745;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+			transition: background-color 0.3s ease, box-shadow 0.3s ease;
+			box-shadow: 0 0 10px rgba(40, 167, 69, 0.5); /* Легкий glow эффект */
+			display: block; /* Добавлено для переноса кнопок на следующую строку */
+			margin-top: 10px; /* Добавлено для отступа между кнопками и текстом */
+		}
+		.version button:hover {
+			background-color: #218838;
+			box-shadow: 0 0 20px rgba(40, 167, 69, 1); /* Более сильный glow эффект при наведении */
+		}
+		.version button:disabled {
+			cursor: not-allowed;
+			color: white;
+			background-color: #d9534f;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+			transition: background-color 0.3s ease, box-shadow 0.3s ease;
+			box-shadow: 0 0 10px rgba(217, 83, 79, 0.5); /* Легкий glow эффект */
+		}
+
         .contact {
             margin-top: 20px;
             font-size: 16px;
@@ -114,12 +169,6 @@
                 max-width: 100%;
                 margin: 20px;
                 padding: 15px;
-            }
-
-            .mod-logo {
-                width: 160px;
-                top: 10px;
-                left: 10px;
             }
 
             h2 {
@@ -196,9 +245,59 @@
         .modal button:hover {
             background-color: #218838;
         }
+		
+		/* Добавим стили для блока с изменениями */
+		.version .changes {
+			display: none; /* Скрыть блок по умолчанию */
+			background-color: #333;
+			color: #fff;
+			padding: 10px;
+			margin-top: 10px;
+			border-radius: 5px;
+			word-wrap: break-word; /* Добавлено для переноса длинного текста */
+		}
+
+		.version .toggle-btn {
+			background-color: #28a745;
+			border: none;
+			padding: 5px 10px;
+			cursor: pointer;
+			font-size: 14px;
+			border-radius: 5px;
+			transition: background-color 0.3s ease;
+		}
+
+		.version .toggle-btn:hover {
+			background-color: #138808;
+		}
+
+		/* Изменения для адаптивности */
+		@media (max-width: 768px) {
+			.version .toggle-btn {
+				padding: 6px 12px;
+			}
+			.version .note {
+				display: block;
+			}
+		}
+
     </style>
 </head>
 <body>
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="./icons/modlogo.png" alt="Логотип сайта">
+            </a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Archive</a></li>
+                <li><a href="datamining.html">DataMining</a></li>
+            </ul>
+        </nav>
+    </header>
+
     <div class="container">
         <h2>The Broken Script Archive</h2>
 		<p>by Wendigodrip</p>
@@ -212,7 +311,7 @@
 			<p>Made with ❤️ by <a href="https://github.com/SkyLandYT2/" target="_blank">SkylandYT2</a></p>
         </div>
     </div>
-    <img class="mod-logo" src="./icons/modlogo.png" alt="Mod Logo">
+	
 	<div id="loader" style="display: none;">
     <div class="spinner"></div>
 	</div>
@@ -238,28 +337,28 @@
 		} 
 	</script>
     <script>
-        const versions = [
-            { version: "The Br0k3n Script v0.71", size: "12.5MB", changes: "", link: "https://drive.google.com/uc?id=1YiU1e-Rm8_yXBaPe5YGvOFxIFKrfBqMW&export=download", available: true },
-            { version: "TheBrokenScript0.8forge1.20.1", size: "24.6MB", changes: "", link: "https://drive.google.com/uc?id=1JW9w0KRo6rs4uabM7V_Wb10jPocbGSVc&export=download", available: true },
-            { version: "The broken script 0.9", size: "24.8MB", changes: "", link: "https://drive.google.com/uc?id=19DRSURolZ6SIEqMxjFbYdXhGeaXbeuBf&export=download", available: true },
-            { version: "The_broken_script_v1.0(fix)", size: "26.8MB", changes: "", link: "https://drive.google.com/uc?id=1nenk1yOx3_rioB2pgbh0J4WBOLdzU5LA&export=download", available: true },
-            { version: "thebrokenscript-1.1-[fixed]-1.20.1", size: "28.8MB", changes: "", link: "https://drive.google.com/uc?id=1ZB04Q0x-o_0Yj6K8CpJDmhnMDNSdJmp8&export=download", available: true },
-            { version: "thebrokenscript-1.3-forge-1.20.1", size: "31.5MB", changes: "", link: "https://drive.google.com/uc?id=112VHMYBoPKTl-hZwT2ozw1z-eFxNOfrd&export=download", available: true },
-            { version: "thebrokenscript-1.3.5-forge-1.20.1", size: "34.8MB", changes: "", link: "https://drive.google.com/uc?id=1TizNW6PP0M4c-Nhl95MMgnv3gISLRE60&export=download", available: true },
-            { version: "thebrokenscript-1.4-forge-1.20.1", size: "34.6MB", changes: "", link: "https://drive.google.com/uc?id=178IEmJaQG6pD-H981ABZLFfUV-HhShJs&export=download", available: true },
-            { version: "thebrokenscript-1.5-forge-1.20.1", size: "38.5MB", changes: "", link: "https://drive.google.com/uc?id=1P1cg62595pilHzYetBzVxt6YSr5fv-GM&export=download", available: true },
-            { version: "thebrokenscript-1.6-forge-1.20.1", size: "39.7MB", changes: "", link: "https://drive.google.com/uc?id=1eaemxkcQuDMS_IuIhDcsIWvyWz_Lqkcg&export=download", available: true, note: "Thanks <strong>strutttr</strong> for sending this version" },
-            { version: "thebrokenscript-1.6.1-forge-1.20.1", size: "39.7MB", changes: "", link: "	https://drive.google.com/uc?id=1ETLb6ftXBsN8XEmvMMM8LSqLd1dDxPjc&export=download", available: true, note: "Thanks <strong>strutttr</strong> for sending this version" },
-            { version: "thebrokenscript-1.6.2-forge-1.20.1", size: "39.7MB", changes: "", link: "https://drive.google.com/uc?id=1-1QNNVBtnNxfEiRWbUw5JXHI1aHX5vHw&export=download", available: true },
-            { version: "thebrokenscript-1.7-forge-1.20.1", size: "41MB", changes: "", link: "https://drive.google.com/uc?id=1GKab8Buh0dJMGChZ_A8UPW-pipKUD0Aq&export=download", available: true },
-            { version: "thebrokenscript-1.7.1-forge-1.20.1", size: "41MB", changes: "", link: "https://drive.google.com/uc?id=1LNHU-tPgV7j_ZLKuBDMZFnVnH4cw4uNJ&export=download", available: true },
-            { version: "thebrokenscript-1.7.2-forge-1.20.1", size: "40.9MB", changes: "", link: "https://drive.google.com/uc?id=1wqzSGL5vVqDk8-41TMltQqvJLQsQWRAr&export=download", available: true },
-            { version: "thebrokenscript-1.7.3-forge-1.20.1", size: "41MB", changes: "", link: "https://drive.google.com/uc?id=1Sb5OADQc1B2BSNN8Jr8jIXH7ncQxDElB&export=download", available: true },
-            { version: "thebrokenscript-1.8-forge-1.20.1", size: "52.3MB", changes: "", link: "https://drive.google.com/uc?id=1R4MGj0HQglVKWYALBtfRxpK94b02lvXa&export=download", available: true },
-            { version: "thebrokenscript-1.9-forge-1.20.1", size: "idk", changes: "", warning: true, link: "https://drive.google.com/uc?id=1Nnb5XCBYox_InNRNpWHmVJE3bKoHyGQv&export=download", available: true, note: "Thanks <strong>saaransh_xds</strong> for finding this version"},
-	    { version: "thebrokenscript-1.9-forge-1.20.1 / safe", size: "idk", changes: "", link: "#", available: false },
-	    { version: "thebrokenscript-1.9-forge-1.20.1_even_safer", size: "86MB", changes: "", link: "https://drive.google.com/uc?id=1V7HoeN86An9XhhssKywsq1OI71LYzHb7&export=download", available: true }
-        ];
+			const versions = [
+				{ version: "thebrokenscript-1.9-forge-1.20.1_even_safer", size: "86MB", changes: "placeholder", link: "https://drive.google.com/uc?id=1V7HoeN86An9XhhssKywsq1OI71LYzHb7&export=download", available: true },
+				{ version: "thebrokenscript-1.9-forge-1.20.1_safe", size: "idk", changes: "NOT", link: "#", available: false },
+				{ version: "thebrokenscript-1.9-forge-1.20.1", size: "86MB", changes: "placeholder", warning: true, link: "https://drive.google.com/uc?id=1Nnb5XCBYox_InNRNpWHmVJE3bKoHyGQv&export=download", available: true},
+				{ version: "thebrokenscript-1.8-forge-1.20.1", size: "52.3MB", changes: "placeholder", link: "https://drive.google.com/uc?id=1R4MGj0HQglVKWYALBtfRxpK94b02lvXa&export=download", available: true },
+				{ version: "thebrokenscript-1.7.3-forge-1.20.1", size: "41MB", changes: "placeholder", link: "https://drive.google.com/uc?id=1Sb5OADQc1B2BSNN8Jr8jIXH7ncQxDElB&export=download", available: true },
+				{ version: "thebrokenscript-1.7.2-forge-1.20.1", size: "40.9MB", changes: "placeholder", link: "https://drive.google.com/uc?id=1wqzSGL5vVqDk8-41TMltQqvJLQsQWRAr&export=download", available: true },
+				{ version: "thebrokenscript-1.7.1-forge-1.20.1", size: "41MB", changes: "placeholder", link: "https://drive.google.com/uc?id=1LNHU-tPgV7j_ZLKuBDMZFnVnH4cw4uNJ&export=download", available: true },
+				{ version: "thebrokenscript-1.7-forge-1.20.1", size: "41MB", changes: "placeholder", link: "https://drive.google.com/uc?id=1GKab8Buh0dJMGChZ_A8UPW-pipKUD0Aq&export=download", available: true },
+				{ version: "thebrokenscript-1.6.2-forge-1.20.1", size: "39.7MB", changes: "placeholder", link: "https://drive.google.com/uc?id=1-1QNNVBtnNxfEiRWbUw5JXHI1aHX5vHw&export=download", available: true },
+				{ version: "thebrokenscript-1.6.1-forge-1.20.1", size: "39.7MB", changes: "placeholder", link: "https://drive.google.com/uc?id=1ETLb6ftXBsN8XEmvMMM8LSqLd1dDxPjc&export=download", available: true, note: "Thanks <strong>strutttr</strong> for sending this version" },
+				{ version: "thebrokenscript-1.6-forge-1.20.1", size: "39.7MB", changes: "placeholder <br>place <br> holder <br> '<br>' <br> test  <br> [+] something <br> [−] something", link: "https://drive.google.com/uc?id=1eaemxkcQuDMS_IuIhDcsIWvyWz_Lqkcg&export=download", available: true, note: "Thanks <strong>strutttr</strong> for sending this version" },
+				{ version: "thebrokenscript-1.5-forge-1.20.1", size: "38.5MB", changes: "placeholder", link: "https://drive.google.com/uc?id=1P1cg62595pilHzYetBzVxt6YSr5fv-GM&export=download", available: true },
+				{ version: "thebrokenscript-1.4-forge-1.20.1", size: "34.6MB", changes: "placeholder", link: "https://drive.google.com/uc?id=178IEmJaQG6pD-H981ABZLFfUV-HhShJs&export=download", available: true },
+				{ version: "thebrokenscript-1.3.5-forge-1.20.1", size: "34.8MB", changes: "placeholder", link: "https://drive.google.com/uc?id=1TizNW6PP0M4c-Nhl95MMgnv3gISLRE60&export=download", available: true },
+				{ version: "thebrokenscript-1.3-forge-1.20.1", size: "31.5MB", changes: "placeholder", link: "https://drive.google.com/uc?id=112VHMYBoPKTl-hZwT2ozw1z-eFxNOfrd&export=download", available: true },
+				{ version: "thebrokenscript-1.1-[fixed]-1.20.1", size: "28.8MB", changes: "placeholder", link: "https://drive.google.com/uc?id=1ZB04Q0x-o_0Yj6K8CpJDmhnMDNSdJmp8&export=download", available: true },
+				{ version: "The_broken_script_v1.0(fix)", size: "26.8MB", changes: "placeholder", link: "https://drive.google.com/uc?id=1nenk1yOx3_rioB2pgbh0J4WBOLdzU5LA&export=download", available: true },
+				{ version: "The broken script 0.9", size: "24.8MB", changes: "placeholder", link: "https://drive.google.com/uc?id=19DRSURolZ6SIEqMxjFbYdXhGeaXbeuBf&export=download", available: true },
+				{ version: "TheBrokenScript0.8forge1.20.1", size: "24.6MB", changes: "placeholder", link: "https://drive.google.com/uc?id=1JW9w0KRo6rs4uabM7V_Wb10jPocbGSVc&export=download", available: true },
+				{ version: "The Br0k3n Script v0.71", size: "12.5MB", changes: "beta test", link: "https://drive.google.com/uc?id=1YiU1e-Rm8_yXBaPe5YGvOFxIFKrfBqMW&export=download", available: true }
+			];
 		
         const backgrounds = [
             './icons/bg/flesh.png',
@@ -272,6 +371,24 @@
         const randomBackground = backgrounds[Math.floor(Math.random() * backgrounds.length)];
 
         document.body.style.backgroundImage = `url('${randomBackground}')`;
+		
+		
+		function toggleChanges(button) {
+		const changes = button.closest('.version').querySelector('.changes');
+		const note = button.closest('.version').querySelector('.note');
+		
+		// Убедитесь, что начальное состояние изменений скрыто
+		if (changes.style.display === "" || changes.style.display === "none") {
+			changes.style.display = "block";
+			button.textContent = "Hide Changes";
+			if (note) note.style.display = "none";
+		} else {
+			changes.style.display = "none";
+			button.textContent = "Show Changes";
+			if (note) note.style.display = "block";
+		}
+	}
+
 
         function loadVersions() {
             document.getElementById('loader').style.display = 'block';
@@ -279,25 +396,29 @@
                 document.getElementById('loader').style.display = 'none';
             }, 1500);
             
-            const list = document.getElementById('versionsList');
-            versions.forEach(mod => {
-                const div = document.createElement('div');
-                div.classList.add('version');
-                div.innerHTML = `
-                    <div>
-                        <strong>${mod.version}</strong><br>
-                        Size: ${mod.size} <br>
-                        Changes: placeholder
-                        ${mod.note ? `<br><span style='color: #ffcc00;'>${mod.note}</span>` : ""}
-                    </div>
-                    <button class="download ${mod.available ? 'available' : 'unavailable'}" 
-                        ${mod.available ? `onclick="checkWarning('${mod.link}', this, '${mod.version}')" ` : "disabled"}>${mod.available ? 'Download' : 'Unavailable'}</button>
-                `;
-                list.appendChild(div);
-            });
-        }
+			const list = document.getElementById('versionsList');
+			versions.forEach(mod => {
+				const div = document.createElement('div');
+				div.classList.add('version');
+				
+				div.innerHTML = `
+
+					<div>
+						<strong>${mod.version}</strong><br>
+						Size: ${mod.size} <br>
+						Changes: <button class="toggle-btn" onclick="toggleChanges(this)">Show Changes</button>
+					</div>
+					<div class="changes">${mod.changes}</div>
+					${mod.note ? `<br><span class="note" style='color: #ffcc00;'>${mod.note}</span>` : ""}
+					<button class="download ${mod.available ? 'available' : 'unavailable'}"
+					
+						${mod.available ? `onclick="checkWarning('${mod.link}', this, '${mod.version}')" ` : "disabled"}>${mod.available ? 'Download' : 'Unavailable'}</button>
 
 
+				`;
+				list.appendChild(div);
+			});
+		}
 
         function checkWarning(link, button, version) {
             const mod = versions.find(m => m.version === version);
@@ -330,5 +451,6 @@
 
         loadVersions();
     </script>
+	
 </body>
 </html>
