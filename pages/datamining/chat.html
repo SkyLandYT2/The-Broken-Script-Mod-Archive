@@ -1,0 +1,233 @@
+<html>
+<head>
+  <title>Command Responses</title>
+  
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+			font-family: 'Open Sans', sans-serif;
+			color: #333;
+			background-color: #f0f0f0;
+		}
+		
+		  h1 {
+			text-align: center; /* Выравнивание по центру */
+			color: white; /* Белый цвет для контраста */
+			font-size: 2em; /* Увеличенный размер шрифта */
+			text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Тень для выделения */
+			background: rgba(0, 0, 0, 0.6); /* Полупрозрачный фон */
+			padding: 10px 20px; /* Внутренние отступы */
+			border-radius: 10px; /* Закругление углов */
+			width: fit-content; /* Подгонка размера под текст */
+			margin: 20px auto; /* Центрирование */
+		  }
+
+		
+		header {
+			background: #111;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			padding: 10px 20px;
+		}
+		
+		nav {
+			width: auto;
+		}
+		
+		nav ul {
+			list-style: none;
+			padding: 0;
+			margin: 0;
+			display: flex;
+			width: 50%; /* Меню займет всю ширину */
+		}
+		
+		nav ul li {
+			margin-left: 10px;
+		}
+		
+		nav ul li a {
+			font-size: 1em;
+			color: #fff;
+			text-decoration: none;
+			display: block;
+			transition: color 0.3s;
+		}
+		
+		nav ul li a:hover {
+			color: #ff9800;
+		}
+		
+		.logo img {
+			height: auto;
+			max-height: 64px;
+			width: 64px;
+		}
+		
+		    table {
+			  width: 80%;
+			  margin: 20px auto;
+			  border-collapse: collapse;
+			  background: rgba(0, 0, 0, 0.8);
+			  color: white;
+			  border-radius: 10px;
+			  overflow: hidden;
+			}
+
+			th, td {
+			  border: 1px solid #444;
+			  padding: 10px;
+			  text-align: left;
+			}
+
+			th {
+			  background: #222;
+			}
+
+			tr:nth-child(even) {
+			  background: rgba(255, 255, 255, 0.1);
+			}
+
+			tr:hover {
+			  background: rgba(255, 255, 255, 0.2);
+			}
+	</style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="../../index.html">
+                <img src="../../icons/modlogo.png" alt="Логотип сайта">
+            </a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="../../index.html">Archive</a></li>
+                <li><a href="../../datamining.html">DataMining</a></li>
+            </ul>
+        </nav>
+    </header>
+	<script>
+        const backgrounds = [
+            '../../icons/bg/flesh.png',
+            '../../icons/bg/redobsidian.png',
+            '../../icons/bg/voiderr.png',
+            '../../icons/bg/old.png',
+            '../../icons/bg/console.png'
+        ];
+		const randomBackground = backgrounds[Math.floor(Math.random() * backgrounds.length)];
+        document.body.style.backgroundImage = `url('${randomBackground}')`;
+		
+	</script>
+  <h1>Command Responses</h1>
+  <table border="2">
+    <tr>
+      <th>Phrase</th>
+      <th>Output</th>
+      <th>Additional Info</th>
+    </tr>
+    <tr>
+      <td>Hello</td>
+      <td>&lt;null&gt; err.type=null.hello</td>
+      <td>playing ambient.cave</td>
+    </tr>
+    <tr>
+      <td>Who are you?</td>
+      <td>&lt;null&gt; err.type=null.</td>
+      <td>playing ambient.cave</td>
+    </tr>
+    <tr>
+      <td>What do you want?</td>
+      <td>&lt;null&gt; err.type=null.freedom</td>
+      <td>playing ambient.cave</td>
+    </tr>
+    <tr>
+      <td>null</td>
+      <td>&lt;null&gt; The end is nigh</td>
+      <td>playing ambient.cave</td>
+    </tr>
+    <tr>
+      <td>Can you see me?</td>
+      <td>&lt;Null&gt; Yes.</td>
+      <td>playing ambient.cave</td>
+    </tr>
+    <tr>
+      <td>Friend?</td>
+      <td></td>
+      <td>Summon NULL_SCARE</td>
+    </tr>
+    <tr>
+      <td>Fuck you</td>
+      <td>&lt;null&gt; nullkillsplayer</td>
+      <td>Summon NOTHINGISWATCHINGCHASE</td>
+    </tr>
+    <tr>
+      <td>How can I help you?</td>
+      <td>&lt;null&gt; [?][?][?]</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Herobrine</td>
+      <td>&lt;null&gt; </td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Entity 303</td>
+      <td>&lt;null&gt; Ended his own life.</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Integrity</td>
+      <td>&lt;null&gt; Deep down under the bedrock.</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>clan_build</td>
+      <td>&lt;null&gt; Home.</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>xXram2dieXx</td>
+      <td>&lt;null&gt; Rot in hell.</td>
+      <td>Summon NULL_IS_HERE</td>
+    </tr>
+    <tr>
+      <td>Revuxor</td>
+      <td>&lt;null&gt; Poor soul.</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Follow</td>
+      <td>&lt;null&gt; Is behind you.</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Nothingiswatching</td>
+      <td>&lt;null&gt; A broken promise.</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Circuit</td>
+      <td>&lt;null&gt; It was all his fault.</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Steve</td>
+      <td>&lt;null&gt; [0.1]</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Void</td>
+      <td>It's me.</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>The broken end</td>
+      <td>&lt;Circuit&gt; Administration.</td>
+      <td></td>
+    </tr>
+  </table>
+</body>
+</html>
