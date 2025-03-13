@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,7 +14,7 @@
             font-family: 'Open Sans', sans-serif;
             color: #333;
         }
-        
+
         header {
             background: #111;
             display: flex;
@@ -21,11 +22,11 @@
             align-items: center;
             padding: 10px 20px;
         }
-        
+
         nav {
             width: auto;
         }
-        
+
         .modal {
             display: none;
             position: fixed;
@@ -37,8 +38,9 @@
             background-color: rgba(0, 0, 0, 0.5);
             justify-content: center;
             align-items: center;
-			z-index: 1414
+            z-index: 1414
         }
+
         .modal-content {
             background-color: #2c2c2c;
             padding: 20px;
@@ -46,6 +48,7 @@
             color: white;
             text-align: center;
         }
+
         .modal button {
             padding: 10px 20px;
             font-size: 14px;
@@ -55,13 +58,16 @@
             border-radius: 5px;
             cursor: pointer;
         }
+
         .modal button.cancel {
             background-color: #d9534f;
         }
+
         .modal button:hover {
             background-color: #218838;
         }
-        
+
+
         nav ul {
             list-style: none;
             padding: 0;
@@ -69,11 +75,11 @@
             display: flex;
             width: 50%;
         }
-        
+
         nav ul li {
             margin-left: 10px;
         }
-        
+
         nav ul li a {
             font-size: 1em;
             color: #fff;
@@ -81,16 +87,17 @@
             display: block;
             transition: color 0.3s;
         }
-        
+
         nav ul li a:hover {
             color: #ff9800;
         }
-        
+
         .logo img {
             height: auto;
             max-height: 64px;
             width: 64px;
         }
+
         body {
             font-family: 'Arial', sans-serif;
             text-align: center;
@@ -102,6 +109,7 @@
             background-size: 34px 32px;
             margin-bottom: 60px;
         }
+
         .container {
             max-width: 90%;
             width: 800px;
@@ -113,12 +121,13 @@
             position: relative;
             z-index: 2;
         }
-		
+
         h2 {
             font-size: 32px;
             color: #ffffff;
             margin-bottom: 20px;
         }
+
         .version {
             display: flex;
             justify-content: space-between;
@@ -130,41 +139,46 @@
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
             transition: transform 0.3s;
         }
+
         .version:hover {
             transform: scale(1.05);
         }
+
         .version div {
             text-align: left;
             flex: 1;
             word-wrap: break-word;
         }
-		.version button {
-			padding: 10px 20px;
-			font-size: 14px;
-			color: white;
-			background-color: #28a745;
-			border: none;
-			border-radius: 5px;
-			cursor: pointer;
-			transition: background-color 0.3s ease, box-shadow 0.3s ease;
-			box-shadow: 0 0 10px rgba(40, 167, 69, 0.5);
-			display: block;
-			margin-top: 10px;
-		}
-		.version button:hover {
-			background-color: #218838;
-			box-shadow: 0 0 20px rgba(40, 167, 69, 1);
-		}
-		.version button:disabled {
-			cursor: not-allowed;
-			color: white;
-			background-color: #d9534f;
-			border: none;
-			border-radius: 5px;
-			cursor: pointer;
-			transition: background-color 0.3s ease, box-shadow 0.3s ease;
-			box-shadow: 0 0 10px rgba(217, 83, 79, 0.5);
-		}
+
+        .version button {
+            padding: 10px 20px;
+            font-size: 14px;
+            color: white;
+            background-color: #28a745;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 0 10px rgba(40, 167, 69, 0.5);
+            display: block;
+            margin-top: 10px;
+        }
+
+        .version button:hover {
+            background-color: #218838;
+            box-shadow: 0 0 20px rgba(40, 167, 69, 1);
+        }
+
+        .version button:disabled {
+            cursor: not-allowed;
+            color: white;
+            background-color: #d9534f;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 0 10px rgba(217, 83, 79, 0.5);
+        }
 
         .contact {
             margin-top: 20px;
@@ -172,18 +186,22 @@
             font-weight: bold;
             color: #ffcc00;
         }
+
         .footer {
             font-size: 14px;
             color: #bbb;
             margin-top: 30px;
         }
+
         .footer a {
             color: #ffcc00;
             text-decoration: none;
         }
+
         .footer a:hover {
             text-decoration: underline;
         }
+
         .spinner {
             width: 50px;
             height: 50px;
@@ -194,8 +212,13 @@
         }
 
         @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
         }
 
         @media (max-width: 768px) {
@@ -221,6 +244,7 @@
             .footer {
                 font-size: 12px;
             }
+
             header {
                 flex-direction: column;
                 align-items: flex-start;
@@ -269,6 +293,7 @@
                 font-size: 12px;
             }
         }
+
         @media (max-width: 480px) {
             .version {
                 flex-direction: column;
@@ -283,6 +308,7 @@
                 width: 100%;
                 margin-top: 10px;
             }
+
             header {
                 width: 100%;
             }
@@ -291,14 +317,16 @@
                 width: 100%;
             }
         }
-		a.custom-link {
-			color: #feaa00;
-		}
-		a.custom-link:hover {
-			color: #00FF00;
-		}
-		
-		.modal {
+
+        a.custom-link {
+            color: #feaa00;
+        }
+
+        a.custom-link:hover {
+            color: #00FF00;
+        }
+
+        .modal {
             display: none;
             position: fixed;
             z-index: 1;
@@ -309,56 +337,57 @@
             background-color: rgba(0, 0, 0, 0.5);
             justify-content: center;
             align-items: center;
-			z-index: 1414
+            z-index: 1414
         }
 
-		.version .changes {
-			display: none;
-			background-color: #333;
-			color: #fff;
-			padding: 10px;
-			margin-top: 10px;
-			border-radius: 5px;
-			word-wrap: break-word;
-		}
+        .version .changes {
+            display: none;
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 5px;
+            word-wrap: break-word;
+        }
 
-		.version .toggle-btn {
-			background-color: #28a745;
-			border: none;
-			padding: 5px 10px;
-			cursor: pointer;
-			font-size: 14px;
-			border-radius: 5px;
-			transition: background-color 0.3s ease;
-		}
+        .version .toggle-btn {
+            background-color: #28a745;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            font-size: 14px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
 
-		.version .toggle-btn:hover {
-			background-color: #138808;
-		}
+        .version .toggle-btn:hover {
+            background-color: #138808;
+        }
 
-		.version .download {
-			display: block;
-		}
+        .version .download {
+            display: block;
+        }
 
-		.version .download.hidden {
-			display: none;
-		}
+        .version .download.hidden {
+            display: none;
+        }
 
-		.version .changes-label {
-			display: none;
-		}
+        .version .changes-label {
+            display: none;
+        }
 
-		@media (max-width: 1068px) {
-			.version .toggle-btn {
-				padding: 6px 12px;
-			}
-			.version .note {
-				display: block;
-			}
-		}
+        @media (max-width: 1068px) {
+            .version .toggle-btn {
+                padding: 6px 12px;
+            }
 
+            .version .note {
+                display: block;
+            }
+        }
     </style>
 </head>
+
 <body>
     <header>
         <div class="logo">
@@ -376,21 +405,23 @@
 
     <div class="container">
         <h2>The Broken Script Archive</h2>
-		<p>by Wendigodrip</p>
+        <p>by Wendigodrip</p>
         <div id="versionsList">
 
         </div>
         <div class="contact">
-			<p>If you have unavailable or missing versions in the mod list or just want to ask about something, create a ticket on my Discord server : (<a href="https://discord.gg/hnpXKJ7xvS" target="_blank" class="custom-link">Invite</a>).</p>
+            <p>If you have unavailable or missing versions in the mod list or just want to ask about something, create a
+                ticket on my Discord server : (<a href="https://discord.gg/hnpXKJ7xvS" target="_blank"
+                    class="custom-link">Invite</a>).</p>
         </div>
         <div class="footer">
-			<p>Made with ❤️ by <a href="https://github.com/SkyLandYT2/" target="_blank">SkylandYT2</a></p>
+            <p>Made with ❤️ by <a href="https://github.com/SkyLandYT2/" target="_blank">SkylandYT2</a></p>
         </div>
     </div>
-	
-	<div id="loader" style="display: none;">
-    <div class="spinner"></div>
-	</div>
+
+    <div id="loader" style="display: none;">
+        <div class="spinner"></div>
+    </div>
     <div id="warningModal" class="modal">
         <div class="modal-content">
             <h3>Warning</h3>
@@ -400,45 +431,45 @@
         </div>
     </div>
 
-	<script>
-		window.onload = () => {
-			document.getElementById('loader').style.display = 'none';
-		};
-
-		function loadVersions() {
-			document.getElementById('loader').style.display = 'block';
-			setTimeout(() => {
-				document.getElementById('loader').style.display = 'none';
-			}, 1500);
-		} 
-	</script>
     <script>
-			const versions = [
-				{ version: "thebrokenscript-1.9.3-forge-1.20.1", size: "86.1MB", changes: "New events <br> New anomaly <br> New structure <br> bugfix", link: "https://drive.google.com/uc?id=1gOOlrSyl-fntkII_tbjhT_9qexurDA2u&export=download", available: true },  
-				{ version: "Community  Patch | thebrokenscript-1.9.1-forge-1.20.1_unsafe", size: "85.9MB", warning: true, changes: "placeholder", link: "https://drive.google.com/uc?id=1hig-x_hKsCiDSQbAH8m4rZ5UuZ-2WMAb&export=download", available: true }, 
-				{ version: "Community  Patch | thebrokenscript-1.9.1-forge-1.20.1_safe", size: "85.9MB", changes: "placeholder", link: "https://drive.google.com/uc?id=16_8p676m09SwDu2wTQk-emvoHan_ItGd&export=download", available: true }, 
-				{ version: "thebrokenscript-1.9-forge-1.20.1_even_safer", size: "86MB", changes: "placeholder", link: "https://drive.google.com/uc?id=1V7HoeN86An9XhhssKywsq1OI71LYzHb7&export=download", available: true },
-				{ version: "thebrokenscript-1.9-forge-1.20.1_safe", size: "86MB", changes: "hi", link: "https://drive.google.com/uc?id=19yOR-SkUf6bcQbqWBLaEb_YqgkBQtmxI&export=download", available: true },
-				{ version: "thebrokenscript-1.9-forge-1.20.1", size: "86MB", changes: "placeholder", warning: true, link: "https://drive.google.com/uc?id=1Nnb5XCBYox_InNRNpWHmVJE3bKoHyGQv&export=download", available: true},
-				{ version: "thebrokenscript-1.8-forge-1.20.1", size: "52.3MB", changes: "placeholder", link: "https://drive.google.com/uc?id=1R4MGj0HQglVKWYALBtfRxpK94b02lvXa&export=download", available: true },
-				{ version: "thebrokenscript-1.7.3-forge-1.20.1", size: "41MB", changes: "placeholder", link: "https://drive.google.com/uc?id=1Sb5OADQc1B2BSNN8Jr8jIXH7ncQxDElB&export=download", available: true },
-				{ version: "thebrokenscript-1.7.2-forge-1.20.1", size: "40.9MB", changes: "placeholder", link: "https://drive.google.com/uc?id=1wqzSGL5vVqDk8-41TMltQqvJLQsQWRAr&export=download", available: true },
-				{ version: "thebrokenscript-1.7.1-forge-1.20.1", size: "41MB", changes: "placeholder", link: "https://drive.google.com/uc?id=1LNHU-tPgV7j_ZLKuBDMZFnVnH4cw4uNJ&export=download", available: true },
-				{ version: "thebrokenscript-1.7-forge-1.20.1", size: "41MB", changes: "placeholder", link: "https://drive.google.com/uc?id=1GKab8Buh0dJMGChZ_A8UPW-pipKUD0Aq&export=download", available: true },
-				{ version: "thebrokenscript-1.6.2-forge-1.20.1", size: "39.7MB", changes: "placeholder", link: "https://drive.google.com/uc?id=1-1QNNVBtnNxfEiRWbUw5JXHI1aHX5vHw&export=download", available: true },
-				{ version: "thebrokenscript-1.6.1-forge-1.20.1", size: "39.7MB", changes: "placeholder", link: "https://drive.google.com/uc?id=1ETLb6ftXBsN8XEmvMMM8LSqLd1dDxPjc&export=download", available: true, note: "Thanks <strong>strutttr</strong> for sending this version" },
-				{ version: "thebrokenscript-1.6-forge-1.20.1", size: "39.7MB", changes: "placeholder <br>place <br> holder <br> '<br>' <br> test  <br> [+] something <br> [−] something", link: "https://drive.google.com/uc?id=1eaemxkcQuDMS_IuIhDcsIWvyWz_Lqkcg&export=download", available: true, note: "Thanks <strong>strutttr</strong> for sending this version" },
-				{ version: "thebrokenscript-1.5-forge-1.20.1", size: "38.5MB", changes: "placeholder", link: "https://drive.google.com/uc?id=1P1cg62595pilHzYetBzVxt6YSr5fv-GM&export=download", available: true },
-				{ version: "thebrokenscript-1.4-forge-1.20.1", size: "34.6MB", changes: "placeholder", link: "https://drive.google.com/uc?id=178IEmJaQG6pD-H981ABZLFfUV-HhShJs&export=download", available: true },
-				{ version: "thebrokenscript-1.3.5-forge-1.20.1", size: "34.8MB", changes: "placeholder", link: "https://drive.google.com/uc?id=1TizNW6PP0M4c-Nhl95MMgnv3gISLRE60&export=download", available: true },
-				{ version: "thebrokenscript-1.3-forge-1.20.1", size: "31.5MB", changes: "placeholder", link: "https://drive.google.com/uc?id=112VHMYBoPKTl-hZwT2ozw1z-eFxNOfrd&export=download", available: true },
-				{ version: "thebrokenscript-1.1-[fixed]-1.20.1", size: "28.8MB", changes: "placeholder", link: "https://drive.google.com/uc?id=1ZB04Q0x-o_0Yj6K8CpJDmhnMDNSdJmp8&export=download", available: true },
-				{ version: "The_broken_script_v1.0(fix)", size: "26.8MB", changes: "placeholder", link: "https://drive.google.com/uc?id=1nenk1yOx3_rioB2pgbh0J4WBOLdzU5LA&export=download", available: true },
-				{ version: "The broken script 0.9", size: "24.8MB", changes: "placeholder", link: "https://drive.google.com/uc?id=19DRSURolZ6SIEqMxjFbYdXhGeaXbeuBf&export=download", available: true },
-				{ version: "TheBrokenScript0.8forge1.20.1", size: "24.6MB", changes: "release", link: "https://drive.google.com/uc?id=1JW9w0KRo6rs4uabM7V_Wb10jPocbGSVc&export=download", available: true },
-				{ version: "The Br0k3n Script v0.71", size: "12.5MB", changes: "beta test", link: "https://drive.google.com/uc?id=1YiU1e-Rm8_yXBaPe5YGvOFxIFKrfBqMW&export=download", available: true }
-			];
-		
+        window.onload = () => {
+            document.getElementById('loader').style.display = 'none';
+        };
+
+        function loadVersions() {
+            document.getElementById('loader').style.display = 'block';
+            setTimeout(() => {
+                document.getElementById('loader').style.display = 'none';
+            }, 1500);
+        } 
+    </script>
+    <script>
+        const versions = [
+            { version: "thebrokenscript-1.9.3-forge-1.20.1", size: "86.1MB", changes: "New events <br> New anomaly <br> New structure <br> bugfix", link: "https://drive.google.com/uc?id=1gOOlrSyl-fntkII_tbjhT_9qexurDA2u&export=download", available: true },
+            { version: "Community  Patch | thebrokenscript-1.9.1-forge-1.20.1_unsafe", size: "85.9MB", warning: true, changes: "placeholder", link: "https://drive.google.com/uc?id=1hig-x_hKsCiDSQbAH8m4rZ5UuZ-2WMAb&export=download", available: true },
+            { version: "Community  Patch | thebrokenscript-1.9.1-forge-1.20.1_safe", size: "85.9MB", changes: "placeholder", link: "https://drive.google.com/uc?id=16_8p676m09SwDu2wTQk-emvoHan_ItGd&export=download", available: true },
+            { version: "thebrokenscript-1.9-forge-1.20.1_even_safer", size: "86MB", changes: "placeholder", link: "https://drive.google.com/uc?id=1V7HoeN86An9XhhssKywsq1OI71LYzHb7&export=download", available: true },
+            { version: "thebrokenscript-1.9-forge-1.20.1_safe", size: "86MB", changes: "hi", link: "https://drive.google.com/uc?id=19yOR-SkUf6bcQbqWBLaEb_YqgkBQtmxI&export=download", available: true },
+            { version: "thebrokenscript-1.9-forge-1.20.1", size: "86MB", changes: "placeholder", warning: true, link: "https://drive.google.com/uc?id=1Nnb5XCBYox_InNRNpWHmVJE3bKoHyGQv&export=download", available: true },
+            { version: "thebrokenscript-1.8-forge-1.20.1", size: "52.3MB", changes: "placeholder", link: "https://drive.google.com/uc?id=1R4MGj0HQglVKWYALBtfRxpK94b02lvXa&export=download", available: true },
+            { version: "thebrokenscript-1.7.3-forge-1.20.1", size: "41MB", changes: "placeholder", link: "https://drive.google.com/uc?id=1Sb5OADQc1B2BSNN8Jr8jIXH7ncQxDElB&export=download", available: true },
+            { version: "thebrokenscript-1.7.2-forge-1.20.1", size: "40.9MB", changes: "placeholder", link: "https://drive.google.com/uc?id=1wqzSGL5vVqDk8-41TMltQqvJLQsQWRAr&export=download", available: true },
+            { version: "thebrokenscript-1.7.1-forge-1.20.1", size: "41MB", changes: "placeholder", link: "https://drive.google.com/uc?id=1LNHU-tPgV7j_ZLKuBDMZFnVnH4cw4uNJ&export=download", available: true },
+            { version: "thebrokenscript-1.7-forge-1.20.1", size: "41MB", changes: "placeholder", link: "https://drive.google.com/uc?id=1GKab8Buh0dJMGChZ_A8UPW-pipKUD0Aq&export=download", available: true },
+            { version: "thebrokenscript-1.6.2-forge-1.20.1", size: "39.7MB", changes: "placeholder", link: "https://drive.google.com/uc?id=1-1QNNVBtnNxfEiRWbUw5JXHI1aHX5vHw&export=download", available: true },
+            { version: "thebrokenscript-1.6.1-forge-1.20.1", size: "39.7MB", changes: "placeholder", link: "https://drive.google.com/uc?id=1ETLb6ftXBsN8XEmvMMM8LSqLd1dDxPjc&export=download", available: true, note: "Thanks <strong>strutttr</strong> for sending this version" },
+            { version: "thebrokenscript-1.6-forge-1.20.1", size: "39.7MB", changes: "placeholder <br>place <br> holder <br> '<br>' <br> test  <br> [+] something <br> [−] something", link: "https://drive.google.com/uc?id=1eaemxkcQuDMS_IuIhDcsIWvyWz_Lqkcg&export=download", available: true, note: "Thanks <strong>strutttr</strong> for sending this version" },
+            { version: "thebrokenscript-1.5-forge-1.20.1", size: "38.5MB", changes: "placeholder", link: "https://drive.google.com/uc?id=1P1cg62595pilHzYetBzVxt6YSr5fv-GM&export=download", available: true },
+            { version: "thebrokenscript-1.4-forge-1.20.1", size: "34.6MB", changes: "placeholder", link: "https://drive.google.com/uc?id=178IEmJaQG6pD-H981ABZLFfUV-HhShJs&export=download", available: true },
+            { version: "thebrokenscript-1.3.5-forge-1.20.1", size: "34.8MB", changes: "placeholder", link: "https://drive.google.com/uc?id=1TizNW6PP0M4c-Nhl95MMgnv3gISLRE60&export=download", available: true },
+            { version: "thebrokenscript-1.3-forge-1.20.1", size: "31.5MB", changes: "placeholder", link: "https://drive.google.com/uc?id=112VHMYBoPKTl-hZwT2ozw1z-eFxNOfrd&export=download", available: true },
+            { version: "thebrokenscript-1.1-[fixed]-1.20.1", size: "28.8MB", changes: "placeholder", link: "https://drive.google.com/uc?id=1ZB04Q0x-o_0Yj6K8CpJDmhnMDNSdJmp8&export=download", available: true },
+            { version: "The_broken_script_v1.0(fix)", size: "26.8MB", changes: "placeholder", link: "https://drive.google.com/uc?id=1nenk1yOx3_rioB2pgbh0J4WBOLdzU5LA&export=download", available: true },
+            { version: "The broken script 0.9", size: "24.8MB", changes: "placeholder", link: "https://drive.google.com/uc?id=19DRSURolZ6SIEqMxjFbYdXhGeaXbeuBf&export=download", available: true },
+            { version: "TheBrokenScript0.8forge1.20.1", size: "24.6MB", changes: "release", link: "https://drive.google.com/uc?id=1JW9w0KRo6rs4uabM7V_Wb10jPocbGSVc&export=download", available: true },
+            { version: "The Br0k3n Script v0.71", size: "12.5MB", changes: "beta test", link: "https://drive.google.com/uc?id=1YiU1e-Rm8_yXBaPe5YGvOFxIFKrfBqMW&export=download", available: true }
+        ];
+
         const backgrounds = [
             './icons/bg/flesh.png',
             './icons/bg/redobsidian.png',
@@ -450,28 +481,28 @@
         const randomBackground = backgrounds[Math.floor(Math.random() * backgrounds.length)];
 
         document.body.style.backgroundImage = `url('${randomBackground}')`;
-		
-		
-		function toggleChanges(button) {
-		const changes = button.closest('.version').querySelector('.changes');
-		const note = button.closest('.version').querySelector('.note');
-		const downloadButton = button.closest('.version').querySelector('.download');
-		const changesLabel = button.closest('.version').querySelector('.changes-label');
-		
-		if (changes.style.display === "" || changes.style.display === "none") {
-			changes.style.display = "block";
-			changesLabel.style.display = "inline";
-			button.textContent = "Hide Changes";
-			if (note) note.style.display = "none";
-			downloadButton.classList.add('hidden');
-		} else {
-			changes.style.display = "none";
-			changesLabel.style.display = "none";
-			button.textContent = "Show Changes";
-			if (note) note.style.display = "block";
-			downloadButton.classList.remove('hidden');
-		}
-	}
+
+
+        function toggleChanges(button) {
+            const changes = button.closest('.version').querySelector('.changes');
+            const note = button.closest('.version').querySelector('.note');
+            const downloadButton = button.closest('.version').querySelector('.download');
+            const changesLabel = button.closest('.version').querySelector('.changes-label');
+
+            if (changes.style.display === "" || changes.style.display === "none") {
+                changes.style.display = "block";
+                changesLabel.style.display = "inline";
+                button.textContent = "Hide Changes";
+                if (note) note.style.display = "none";
+                downloadButton.classList.add('hidden');
+            } else {
+                changes.style.display = "none";
+                changesLabel.style.display = "none";
+                button.textContent = "Show Changes";
+                if (note) note.style.display = "block";
+                downloadButton.classList.remove('hidden');
+            }
+        }
 
 
         function loadVersions() {
@@ -479,13 +510,13 @@
             setTimeout(() => {
                 document.getElementById('loader').style.display = 'none';
             }, 1500);
-            
-			const list = document.getElementById('versionsList');
-			versions.forEach(mod => {
-				const div = document.createElement('div');
-				div.classList.add('version');
-				
-				div.innerHTML = `
+
+            const list = document.getElementById('versionsList');
+            versions.forEach(mod => {
+                const div = document.createElement('div');
+                div.classList.add('version');
+
+                div.innerHTML = `
 
 					<div>
 						<strong>${mod.version}</strong><br>
@@ -500,9 +531,9 @@
 
 
 				`;
-				list.appendChild(div);
-			});
-		}
+                list.appendChild(div);
+            });
+        }
 
         function checkWarning(link, button, version) {
             const mod = versions.find(m => m.version === version);
@@ -520,7 +551,7 @@
             document.getElementById('cancelBtn').onclick = () => {
                 modal.style.display = 'none';
             };
-            
+
             document.getElementById('downloadBtn').onclick = () => {
                 startDownload(link, button);
                 modal.style.display = 'none';
@@ -535,6 +566,7 @@
 
         loadVersions();
     </script>
-	
+
 </body>
+
 </html>

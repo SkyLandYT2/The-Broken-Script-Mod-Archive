@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entity</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Open Sans', sans-serif;
+            color: #333;
+            background-color: #f0f0f0;
+        }
+
+        h1 {
+            text-align: center;
+            color: white;
+            font-size: 2em;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+            background: rgba(0, 0, 0, 0.6);
+            padding: 10px 20px;
+            border-radius: 10px;
+            width: fit-content;
+            margin: 20px auto;
+        }
+
+        header {
+            background: #111;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+        }
+
+        nav {
+            width: auto;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            width: 50%;
+        }
+
+        nav ul li {
+            margin-left: 10px;
+        }
+
+        nav ul li a {
+            font-size: 1em;
+            color: #fff;
+            text-decoration: none;
+            display: block;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #ff9800;
+        }
+
+        .logo img {
+            height: auto;
+            max-height: 64px;
+            width: 64px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <a href="../../index.html">
+                <img src="../../icons/modlogo.png" alt="icon">
+            </a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="../../index.html">Archive</a></li>
+                <li><a href="../../datamining.html">DataMining</a></li>
+            </ul>
+        </nav>
+    </header>
+    <script>
+        const backgrounds = [
+            '../../icons/bg/flesh.png',
+            '../../icons/bg/redobsidian.png',
+            '../../icons/bg/voiderr.png',
+            '../../icons/bg/old.png',
+            '../../icons/bg/console.png'
+        ];
+        const randomBackground = backgrounds[Math.floor(Math.random() * backgrounds.length)];
+        document.body.style.backgroundImage = `url('${randomBackground}')`;
+    </script>
+	<h1 align="center">under construction</h1>
+
+</body>
+
+</html>

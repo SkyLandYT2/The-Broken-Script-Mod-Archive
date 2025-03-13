@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Structures</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Open Sans', sans-serif;
+            color: #333;
+            background-color: #f0f0f0;
+        }
+
+        h1 {
+            text-align: center;
+            color: white;
+            font-size: 2em;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+            background: rgba(0, 0, 0, 0.6);
+            padding: 10px 20px;
+            border-radius: 10px;
+            width: fit-content;
+            margin: 20px auto;
+        }
+
+        header {
+            background: #111;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+        }
+
+        nav {
+            width: auto;
+        }
+
+        /* Стили для навигации в хидере */
+        nav ul.header-nav {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            width: 50%;
+        }
+
+        nav ul.header-nav li.header-item {
+            margin-left: 10px;
+        }
+
+        nav ul.header-nav li.header-item a.header-link {
+            font-size: 1em;
+            color: #fff;
+            text-decoration: none;
+            display: block;
+            transition: color 0.3s;
+        }
+
+        nav ul.header-nav li.header-item a.header-link:hover {
+            color: #ff9800;
+        }
+
+        .logo img {
+            height: auto;
+            max-height: 64px;
+            width: 64px;
+        }
+
+        /* Стили для списка файлов */
+        ul#file-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        ul#file-list li.file-item {
+            display: block;
+            text-align: center;
+            color: #fff;
+            position: relative;
+            padding-left: 20px;
+            margin: 10px 0;
+        }
+
+        ul#file-list li.file-item a.file-link {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        ul#file-list li.file-item a.file-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <a href="../../index.html">
+                <img src="../../icons/modlogo.png" alt="icon">
+            </a>
+        </div>
+        <nav>
+            <ul class="header-nav">
+                <li class="header-item"><a class="header-link" href="../../index.html">Archive</a></li>
+                <li class="header-item"><a class="header-link" href="../../datamining.html">DataMining</a></li>
+            </ul>
+        </nav>
+    </header>
+    <script>
+        const backgrounds = [
+            '../../icons/bg/flesh.png',
+            '../../icons/bg/redobsidian.png',
+            '../../icons/bg/voiderr.png',
+            '../../icons/bg/old.png',
+            '../../icons/bg/console.png'
+        ];
+        const randomBackground = backgrounds[Math.floor(Math.random() * backgrounds.length)];
+        document.body.style.backgroundImage = `url('${randomBackground}')`;
+    </script>
+    <h1 align="center">Structures</h1>
+    <ul id="file-list"></ul>
+
+    <script>
+        const fileData = `
+            159Byte 2bedrocks.nbt
+            7,125Byte baserestored.nbt
+            7,153Byte baseruins.nbt
+            7,372Byte bedrockhallway1.nbt
+            7,662Byte bedrockhallway10.nbt
+            7,600Byte bedrockhallway2.nbt
+            7,600Byte bedrockhallway3.nbt
+            7,599Byte bedrockhallway4.nbt
+            7,620Byte bedrockhallway5.nbt
+            7,600Byte bedrockhallway6.nbt
+            7,620Byte bedrockhallway7.nbt
+            7,585Byte bedrockhallway8.nbt
+            7,662Byte bedrockhallway9.nbt
+            8,218Byte bedrockhallwayexit.nbt
+            134Byte bench.nbt
+            5,529Byte burn_fractal.nbt
+            5,187Byte carcas.nbt
+            10,510Byte cavebase.nbt
+            37,786Byte clanbuildoverhaul.nbt
+            5,981Byte clandimensionroom1.nbt
+            6,045Byte clandimensionroom2.nbt
+            5,937Byte clandimensionroom3.nbt
+            6,936Byte clandimensionroom4.nbt
+            4,637Byte clanvoidnew1.nbt
+            5,180Byte clanvoidnew2.nbt
+            4,737Byte clanvoidnew3.nbt
+            4,838Byte clanvoidnew4.nbt
+            4,841Byte clanvoidnew5.nbt
+            5,237Byte clanvoidnew6.nbt
+            4,739Byte clanvoidnew7.nbt
+            4,567Byte clanvoidnew8.nbt
+            475Byte cobledpillar.nbt
+            258Byte cross.nbt
+            1,533Byte crosses.nbt
+            349Byte crossfly.nbt
+            186Byte dirtpillar.nbt
+            463Byte doortrap.nbt
+            6,211Byte fieldbase.nbt
+            6,512Byte fieldtree.nbt
+            1,271Byte fractal3.nbt
+            1,404Byte fractal4.nbt
+            460Byte generationbug1.nbt
+            372Byte gift.nbt
+            217Byte giift.nbt
+            1,261Byte glassfractal.nbt
+            177Byte glasspillar.nbt
+            1,481Byte gorestructure.nbt
+            239Byte heavenportal.nbt
+            1,808Byte house1.nbt
+            925Byte house2.nbt
+            699Byte house3.nbt
+            394Byte lamppost.nbt
+            36,954Byte lavacast.nbt
+            198Byte lavapool.nbt
+            412Byte magmacross.nbt
+            25,615Byte memory1.nbt
+            675Byte noisefractal.nbt
+            6,475Byte nullbuild1.nbt
+            6,608Byte nullbuild2.nbt
+            6,601Byte nullbuild3.nbt
+            6,472Byte nullbuild4.nbt
+            6,614Byte nullbuild5.nbt
+            306Byte obfuscatedsign.nbt
+            5,601Byte portal1.nbt
+            622Byte randombrickstructure.nbt
+            502Byte randomstructurecobbled.nbt
+            457Byte randomwoodstructure.nbt
+            1,195Byte redstoneconstruct.nbt
+            339Byte sandcube.nbt
+            187Byte sandpillar.nbt
+            278Byte sign1.nbt
+            276Byte sign2.nbt
+            267Byte sign3.nbt
+            275Byte sign4.nbt
+            281Byte sign5.nbt
+            702Byte signabomination.nbt
+            271Byte signnicehouses.nbt
+            1,490Byte smallfractal.nbt
+            3,473Byte stoneaslym.nbt
+            194Byte structure1.nbt
+            243Byte thedoor.nbt
+            471Byte totem.nbt
+            1,053Byte trap1.nbt
+            3,320Byte trap2.nbt
+            1,387Byte treetop.nbt
+            167Byte treewithnoleaves.nbt
+            4,276Byte voidexp1.nbt
+            4,356Byte voidexp11.nbt
+            4,428Byte voidexp2.nbt
+            4,329Byte voidexp3.nbt
+            4,761Byte voidexp6.nbt
+            4,525Byte voidexp7.nbt
+            4,442Byte voidexp8.nbt
+            4,621Byte voidexp9.nbt
+            4,771Byte voidexpconsoleroom.nbt
+            4,077Byte voidexpedge.nbt
+            4,557Byte voidexpedgepassage.nbt
+            4,960Byte voidhallway.nbt
+            5,086Byte voidhallwayexit.nbt
+        `;
+
+        const files = fileData
+            .trim()
+            .split('\n')
+            .map(line => {
+                const [sizePart, name] = line.trim().split(' ');
+                const size = parseFloat(sizePart.replace(',', ''));
+                return { name, size };
+            });
+
+        const fileList = document.getElementById('file-list');
+
+        function createFileItem(file) {
+            const li = document.createElement('li');
+            li.className = 'file-item';
+            const link = document.createElement('a');
+            link.className = 'file-link';
+            link.href = `../../files/structures/${file.name}`;
+            link.textContent = `${file.name} (${(file.size / 1024).toFixed(2)} KB)`;
+            link.download = file.name;
+            li.appendChild(link);
+            return li;
+        }
+
+        files.forEach(file => {
+            const fileItem = createFileItem(file);
+            fileList.appendChild(fileItem);
+        });
+    </script>
+</body>
+
+</html>

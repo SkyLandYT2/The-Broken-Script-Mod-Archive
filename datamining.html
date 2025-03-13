@@ -7,8 +7,7 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<link rel="icon" href="favicon.ico" type="image/x-icon">
 	<style>
-	
-	    h1 {
+		h1 {
 			text-align: center;
 			color: white;
 			font-size: 3em;
@@ -26,7 +25,7 @@
 			font-family: 'Open Sans', sans-serif;
 			color: #333;
 		}
-		
+
 		header {
 			background: #111;
 			display: flex;
@@ -34,23 +33,24 @@
 			align-items: center;
 			padding: 10px 20px;
 		}
-		
+
 		nav {
 			width: auto;
 		}
-		
+
 		nav ul {
 			list-style: none;
 			padding: 0;
 			margin: 0;
 			display: flex;
-			width: 50%; /* Меню займет всю ширину */
+			width: 50%;
+			/* Меню займет всю ширину */
 		}
-		
+
 		nav ul li {
 			margin-left: 10px;
 		}
-		
+
 		nav ul li a {
 			font-size: 1em;
 			color: #fff;
@@ -58,18 +58,17 @@
 			display: block;
 			transition: color 0.3s;
 		}
-		
+
 		nav ul li a:hover {
 			color: #ff9800;
 		}
-		
+
 		.logo img {
 			height: auto;
 			max-height: 64px;
 			width: 64px;
 		}
 
-		/* Стили для ссылок */
 		main a {
 			margin: 20px auto;
 			padding: 15px 30px;
@@ -87,21 +86,21 @@
 			background-color: #808080;
 			transform: scale(1.05);
 		}
-
 	</style>
 </head>
+
 <body>
-<script>
-        const backgrounds = [
-            './icons/bg/flesh.png',
-            './icons/bg/redobsidian.png',
-            './icons/bg/voiderr.png',
-            './icons/bg/old.png',
-            './icons/bg/console.png'
-        ];
+	<script>
+		const backgrounds = [
+			'./icons/bg/flesh.png',
+			'./icons/bg/redobsidian.png',
+			'./icons/bg/voiderr.png',
+			'./icons/bg/old.png',
+			'./icons/bg/console.png'
+		];
 		const randomBackground = backgrounds[Math.floor(Math.random() * backgrounds.length)];
-        document.body.style.backgroundImage = `url('${randomBackground}')`;	
-</script>
+		document.body.style.backgroundImage = `url('${randomBackground}')`;	
+	</script>
 	<header>
 		<div class="logo">
 			<a href="index.html">
@@ -116,7 +115,10 @@
 		</nav>
 	</header>
 	<main>
-	<h1 align="center">under construction</h1>
-	<a href="pages/datamining/chat.html">Chat Phrases</a>
-    <a href="pages/datamining/chat.html">placeholder</a>
+		<h1 align="center">DataMining</h1>
+		<a href="pages/datamining/chat.html">Chat Phrases</a>
+		<a href="pages/datamining/devcode.html">DevCode Patch</a>
+		<a href="pages/datamining/structures.html">Structures</a>
+		<a href="pages/datamining/entity.html">Entity</a>
+
 </html>
